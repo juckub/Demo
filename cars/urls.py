@@ -1,11 +1,11 @@
 from django.contrib import admin
 from django.urls import path, include
-from cars.views import *
+from cars.views import CarCrateView, CarsListView, CarDetailView
 
 
 app_name = 'car'
-urlpatterns = {
+urlpatterns = [
     path('car/create/', CarCrateView.as_view()),
     path('all/', CarsListView.as_view()),
     path('car/detail/<int:pk>/', CarDetailView.as_view()),
-}
+]
